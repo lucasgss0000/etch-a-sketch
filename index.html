@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Oczywsziysya">
+        <meta name="description" content="Simple Etch A Sketch project made with Vanilla JavaScript for learning purposes.">
+        <title>Etch A Sketch</title>
+        <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+        <script defer src="script.js"></script>
+    </head>
+
+    <body>
+        <!--- the toy itself --->
+        <main class="etch-a-sketch">
+            <header class="title">
+                <div>Magic</div>
+                <h1>Etch A Sketch</h1>
+                <div>Screen</div>
+            </header>
+            <div class="canvas">
+            </div>
+            <div class="etch-buttons">
+                <button class="etch-button etch-button--random"></button>
+                <button class="etch-button etch-button--active etch-button--black"></button>
+                <button class="etch-button etch-button--green"></button>
+                <button class="etch-button etch-button--eraser"></button>
+                <button class="etch-button etch-button--clear"></button>
+            </div>
+        </main>
+
+        <!--- buttons --->
+        <div class="buttons">
+            <button class="button button--canvas">Create Canvas</button>
+            <button class="button button--help">Help</button>
+            <button class="button button--history">Historical Reference</button>
+        </div>
+
+        <!--- modal windows --->
+        <div class="modal modal--canvas hidden">
+            <div class="close-modal">&times;</div>
+            <h2>Create frame for drawing</h2>
+            <p>Enter a number ranging from 2 to 75. This number sets how many rectangles each row and column of the drawing frame will have.
+                The more rectangles on the frame, the more detailed the things you draw can be!
+            </p>
+            <form>
+                <input type="text" placeholder="20" />
+            </form>
+        </div>
+
+        <div class="modal modal--history hidden">
+            <div class="close-modal">&times;</div>
+            <h2><a href="https://www.museumofplay.org/toys/etch-a-sketch/" target="_blank">The history behind the toy</a></h2>
+            <p>French electrical technician André Cassagnes applied his experience with the clinging properties of an electrostatic charge to invent a mechanical drawing toy with no spare parts. He called his creation L’Ecran Magique, the magic screen.</p>
+            <p>Introduced at the International Toy Fair in Nuremberg, Germany, in 1959, the gadget failed to draw much attention. Numerous manufacturers passed over a chance to pick up the new toy, concluding that Cassagnes wanted too much money for it. However, the Ohio Art Company took a second look and invested $25,000, more than they had ever paid for a license. Ohio Art renamed the toy “Etch A Sketch” and began mass production later that year. Saturation advertising on television turned the toy into a must-have item for Christmas, 1960, and Ohio Art’s factory worked feverishly until noon that Christmas Eve. Etch A Sketch has changed little since then.</p>
+            <p>Static charges hold a mixture of aluminum powder and tiny plastic beads to the inside of a clear plastic screen. Knobs control the horizontal and vertical rods that move a stylus where the two meet. The point scores a line across the screen’s reverse side. Experts can draw a curved or diagonal line. Turning the screen over and giving it a shake erases the picture.</p>
+            <img src="./assets/images/etch-a-sketch.webp" alt="Image of an Etch A Sketch." />
+        </div>
+
+        <div class="modal modal--help hidden">
+            <div class="close-modal">&times;</div>
+            <h2>How to use this?</h2>
+            <p>Click on one of the buttons on the Etch A Sketch and start hovering over the drawing frame. 
+                The currently active button is smaller than the others (because it's being pressed). Alternatively, you can 
+                press the keys "b"/"g"/"r"/"e"/"c" while your cursor is over the canvas and the active button will change as well.
+            </p>
+            <ul>
+                <li>⚫ Key "b" for the black button</li>
+                <li>🟢 Key "g" for the green button</li>
+                <li>🌈 Key "r" for the random button</li>
+                <li>🧽 Key "e" for the eraser button</li>
+                <li>🧹 Key "c" for the clear button (clears the canvas)</li>
+            </ul>
+            <p>The random 🌈 mode is special: it'll color the target rectangle a random color.</p>
+            <p style="font-weight: 800; color: white">Have fun!</p>
+        </div>
+
+        <!--- overlay --->
+        <div class="overlay hidden"></div>
+    </body>
+</html>
